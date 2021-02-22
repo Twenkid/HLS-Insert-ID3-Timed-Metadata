@@ -45,7 +45,8 @@ Nobody has answered though.
 
 https://en.wikipedia.org/wiki/Packetized_elementary_stream
 
-PTS DTS indicator 2 11 = both present, 01 is forbidden, 10 = only PTS, 00 = no PTS or DTS
+PTS DTS indicator 2
+11 = both present, 01 is forbidden, 10 = only PTS, 00 = no PTS or DTS
 
 As suggested by the PHP code:
 
@@ -74,7 +75,9 @@ E:\>E:\Wampee-3.1.0-beta-3.5\bin\php\php7.2.4\php.exe e:\injector.php  -i e:\fil
 The input is an Apple sample:
 
 https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8
+
 https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/v6/prog_index.m3u8
+
 https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/v6/fileSequence0.ts
 
 Parsed 28675 MPEG TS frames with 0 errors
@@ -133,9 +136,9 @@ It doesn't enter the scope where the metaFrame is generated and injected in the 
 ```
 ...
 
-Also, viewTS graph of the output fsc_meta.ts doesn't show the presence of pid 258 stream (not studied the code so deep to trace that, too).
+Also, viewTS graph of the output fsc_meta.ts doesn't show the presence of pid 258 stream (I have not studied the code so deep to trace that, too).
 
-As far I understand for now, the script is supposed to add that new program_id (data stream) and the new timestamps ,right?  Or it has to be prepared beforehand and forced (with PTS/DTS set, the question of the colleague).
+As far I understand for now, the script is supposed to add that new program_id (data stream) and the new timestamps ... Or it has to be prepared beforehand and forced (with PTS/DTS set, the question of the colleague).
 
 I haven't found how yet, although I noticed ffmpeg parameters regarding mpegts tables or stream ids, such as:
 
@@ -146,7 +149,8 @@ I haven't found how yet, although I noticed ffmpeg parameters regarding mpegts t
 >
 >   For example, to set the stream 0 PID to 33 and the stream 1 PID to 36 for an output mpegts file:
 >
->    ffmpeg -i inurl -streamid 0:33 -streamid 1:36 out.ts"
+```   ffmpeg -i inurl -streamid 0:33 -streamid 1:36 out.ts"
+```
 
 However the script seems to add what it needs automatically (258 here).
 
@@ -216,9 +220,7 @@ The Hex view:
 
 Still there's only one Pid = 257
 
-...
-
-That's the status so far.
 
 ...
+
 31.10.2020
