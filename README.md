@@ -76,7 +76,7 @@ tag.txt contains:
 It is tested both with 1,2,3 and 11,12,13 for an Apple .ts, because it seems to start nominally from 10 sec, according to the viewTS graph; some discussions also suggest that:
 
 
-[image] i1.png
+<img src="https://github.com/Twenkid/HLS-Insert-ID3-Timed-Metadata/blob/main/i1.png">
 
 1.tag is created by the script, taken from the debug output of the script, typed in a HEX editor:
 
@@ -172,7 +172,7 @@ Switch subtitle stream from #-1 to #-1 vq=  386KB sq=    0B f=0/0
 
 However when peeking in the file with a HEX editor, ID3 is only appearing in the beginning (per file only); also the text is not there as it's not inserted and it seems as stuffed with placeholders FF.
 
-[image] i2.png
+<img src="https://github.com/Twenkid/HLS-Insert-ID3-Timed-Metadata/blob/main/i2.png">
 
 ...
 
@@ -191,7 +191,7 @@ gressive), 1280x720 [SAR 1:1 DAR 16:9], Closed Captions, 60 fps, 60 tbr, 90k tbn
 
 The Hex view:
 
-[image] i3.png
+<img src="https://github.com/Twenkid/HLS-Insert-ID3-Timed-Metadata/blob/main/i3.png">
 
 Still there's only one Pid = 257
 
