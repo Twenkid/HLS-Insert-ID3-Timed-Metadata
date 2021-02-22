@@ -2,11 +2,12 @@
 
 Notes by Todor Arnaudov regarding working on a task
 
-# "Insert ID3 timed metadata in an HLS stream" on Linux or Windows, without using the Apple tools (with which it's easy).
+## "Insert ID3 timed metadata in an HLS stream" on Linux or Windows
 
-Applying on m3u8 ... etc.
+There are proper tools for Apple/MacOS.
 
-See also the other HLS repositories in Twenkid's profile:
+
+See also the other HLS/m3u8 related repositories in Twenkid's profile:
 
 https://github.com/Twenkid/hls-creator
 https://github.com/Twenkid/HLS-M3U8-Playlist-Operations
@@ -21,25 +22,26 @@ Without them it turned into a debugging adventure - the injector didn't work as 
 
 Someone mentions that reg. Apple requirement and it is in the PHP script, however the script doesn't inject to an Apple example .ts as well.
 
-I tried many things both with the Linux shell script wrapper of the PHP/Perl injector that you sent me, and with the original PHP-only version that is linked there https://github.com/lebougui/hls-id3tags --> https://github.com/dusterio/hlsinjector (the PHP injector is the same code, except the top lines about the author, I compared them with Merge).
+I tried many things both with the Linux shell script wrapper of the PHP/Perl injector ..., and with the original PHP-only version that is linked there https://github.com/lebougui/hls-id3tags --> https://github.com/dusterio/hlsinjector (the PHP injector is the same code, except the top lines about the author, I compared them with Merge).
 
 Unfortunately both projects lack a sample .ts file before-after injection to test with it.
 
 ...
 
-So I first worked both with the Linux version (on Ubuntu Studio 19.xx) and Wndows, but they both failed to insert, so I focused on the PHP only in Windows.
+So I first worked both with the Linux version (on Ubuntu Studio 19.xx [a VM on VirtualBox] ) and Windows, but they both failed to insert, so I focused on the PHP only on Windows.
 
 I found one evidence for the PTS/DTS issue:
 
 https://video.stackexchange.com/questions/28855/pts-dts-indicator-in-pes-frame
 
-"PTS DTS indicator in PES frame
+```"PTS DTS indicator in PES frame
 Asked 11 months ago
 
 I'm trying to add timed metadata into TS files and to the best of my knowledge it is only possible if the PES frame has the PTS DTS indicator with the value 2, which means that only PTS is present. From my experience this is the only case when after injecting the timed metadata, the video also works on iOS devices. Problem is that I don't know how to properly encode MP4 source files to TS files in a way that would set this kind of indicators at specific points in time. With the most basic ffmpeg command this indicator rarely appears, if at all (value 2). Through blind luck I found out that forcing key frames makes this indicator appear more often. Does anyone know how I can force PES frames with indicator value 2 at specific times during the encoding process? Or can someone clarify how even the indicator value is chosen for each PES frame? Currently I am using the following command for encoding:
 
 ffmpeg -i "input.mp4" -hls_list_size 0 -force_key_frames "expr:gte(t,n_forced*1)" -f hls -hls_time 10 -c:v h264 -profile:v main  -s 1920x1080 -b:v 2000k -c:a aac -ab 96k -ar 32000 "output_2000_.m3u8"
 See https://en.wikipedia.org/wiki/Packetized_elementary_stream for information about PES, specifically check the Optional PES header section."
+```
 
 Nobody has answered though.
 
