@@ -1,9 +1,19 @@
 # HLS-Insert-ID3-Timed-Metadata
 
-Notes by Todor Arnaudov regarding working on a task: "Insert ID3 timed metadata in an HLS stream" - on Linux or Windows, without using the Apple tools. (m3u8 ... etc.)
- See the other HLS repositories in Twenkid's profile. From 31.10.2020
+Notes by Todor Arnaudov regarding working on a task
+
+# "Insert ID3 timed metadata in an HLS stream" on Linux or Windows, without using the Apple tools (with which it's easy).
+
+Applying on m3u8 ... etc.
+
+See also the other HLS repositories in Twenkid's profile:
+
+https://github.com/Twenkid/hls-creator
+https://github.com/Twenkid/HLS-M3U8-Playlist-Operations
 
 (...)
+
+31.10.2020:
 
 I see the process is supposed to be straightforward with the proper Apple tools: https://jmacmullin.wordpress.com/2010/11/03/adding-meta-data-to-video-in-ios/
 
