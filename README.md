@@ -1,6 +1,6 @@
 # HLS-Insert-ID3-Timed-Metadata
 
-Notes by Todor Arnaudov regarding working on a task
+Notes by Todor Arnaudov on researching a solution for the task:
 
 ## "Insert ID3 timed metadata in an HLS stream" on Linux or Windows
 
